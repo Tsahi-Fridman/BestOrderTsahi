@@ -11,7 +11,7 @@ for row in cursor.fetchall():
 # # # set lists table
 # cursor.execute("CREATE TABLE lists (id INTEGER(20), name VARCHAR(255), description VARCHAR(255))")
 
-# # # set lists tasks
+# # # set tasks table
 # cursor.execute("CREATE TABLE tasks (id INTEGER(20), list_id INTEGER(20), name VARCHAR(255),
 # description VARCHAR(255), status VARCHAR(255), priority INTEGER(20), assignee  VARCHAR(255))")
 
