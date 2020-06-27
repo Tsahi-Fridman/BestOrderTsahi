@@ -12,7 +12,6 @@ db = SQLAlchemy(app)
 @lists_bp.route("/add_list")
 def add_list():
     new_list_item = Lists()
-    new_list_item.id = 1
     new_list_item.name = 'first list name'
     new_list_item.description = 'first list description'
     db.session.add(new_list_item)

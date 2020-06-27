@@ -23,14 +23,7 @@ def all_lists():
     return result + "</table>" + "done"
 
 
-@lists_bp.route("/add_list")
-def add_list():
-    new_list_item = Lists()
-    new_list_item.name = 'secund list name'
-    new_list_item.description = 'secund list description'
-    db.session.add(new_list_item)
-    db.session.commit()
-    return "Done new list item added to lists list"
+
 
 
 if __name__ == '__main__':
