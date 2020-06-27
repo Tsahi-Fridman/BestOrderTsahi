@@ -12,17 +12,6 @@ class Lists(db.Model):
     name = db.Column(db.String(225))
     description = db.Column(db.String(225))
 
-    def __init__(self):
-        print("__init__")
-
-    def add_list(self):
-        print("add_list")
-
-    def edit_list(self):
-        print("add_list")
-
-    def delete_list(self):
-        print("add_list")
 
 
 class Tasks(db.Model):
@@ -34,16 +23,15 @@ class Tasks(db.Model):
     priority = db.Column(db.Integer)
     assignee = db.Column(db.String(225))
 
-    # description VARCHAR(255), status VARCHAR(255), priority INTEGER(20), assignee  VARCHAR(255)
-
     def __init__(self):
         print("__init__")
 
-    def add_list(self):
+    def add_task(self):
         print("add_list")
 
-    def edit_list(self):
+    def edit_task(self):
         print("add_list")
 
-    def delete_list(self):
+    def delete_task(self):
         print("add_list")
+
