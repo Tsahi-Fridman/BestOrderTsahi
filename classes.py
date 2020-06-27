@@ -7,7 +7,7 @@ db = SQLAlchemy(app)
 
 
 class Lists(db.Model):
-    __tablename__ = "lists"
+    __tablename__ = "list_table"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(225))
     description = db.Column(db.String(225))
@@ -23,15 +23,4 @@ class Tasks(db.Model):
     priority = db.Column(db.Integer)
     assignee = db.Column(db.String(225))
 
-    def __init__(self):
-        print("__init__")
-
-    def add_task(self):
-        print("add_list")
-
-    def edit_task(self):
-        print("add_list")
-
-    def delete_task(self):
-        print("add_list")
 

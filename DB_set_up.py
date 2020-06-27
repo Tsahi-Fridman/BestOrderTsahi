@@ -9,7 +9,7 @@ for row in cursor.fetchall():
     print(row)
 
 # # # set lists table
-# cursor.execute("CREATE TABLE lists (id INTEGER(20), name VARCHAR(255), description VARCHAR(255))")
+# cursor.execute("CREATE TABLE list_table (id INTEGER(20), name VARCHAR(255), description VARCHAR(255))")
 
 # # # set tasks table
 # cursor.execute("CREATE TABLE tasks (id INTEGER(20), list_id INTEGER(20), name VARCHAR(255),

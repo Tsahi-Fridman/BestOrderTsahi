@@ -17,10 +17,20 @@ def all_lists():
     result = "<table border=1>"
     for mylist in Lists.query.all():
         result += "<tr> <td>" + str(mylist.id) + "</td> " \
-                       "<td>" + mylist.first_name + "</td>" \
-                       "<td> " + mylist.age + "</td>" \
+                       "<td>" + mylist.name + "</td>" \
+                       "<td> " + mylist.description + "</td>" \
                   "</tr>"
     return result + "</table>" + "done"
+
+
+@lists_bp.route("/add_list")
+def add_list():
+    new_list_item = Lists()
+    new_list_item.name = 'secund list name'
+    new_list_item.description = 'secund list description'
+    db.session.add(new_list_item)
+    db.session.commit()
+    return "Done new list item added to lists list"
 
 
 if __name__ == '__main__':
