@@ -21,15 +21,15 @@ def add_list(name, description):
 
 @lists_bp.route("/edit_list/<id>/<name>/<description>")
 def edit_list(id, name, description):
-    Lists.query.filter(Lists.id == id).update({"name": name})
-    Lists.query.filter(Lists.id == id).update({"description": description})
+    Lists.query.filter(Lists.id == int(id)).update({"name": name})
+    Lists.query.filter(Lists.id == int(id)).update({"description": description})
     db.session.commit()
     return "edit_list"
 
 
 @lists_bp.route("/delete_list/<id>")
 def delete_list(id):
-    Lists.query.filter_by(id=id).delete()
+    Lists.query.filter_by(id=int(id)).delete()
     db.session.commit()
     return "delete_list"
 

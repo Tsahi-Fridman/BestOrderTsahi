@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from views import lists
 from views.lists import lists_bp
 from classes import Lists
 
@@ -13,9 +12,9 @@ app.register_blueprint(lists_bp, url_prefix="/lists")
 
 @app.route("/lists")
 def all_lists():
-
+    all_lists = Lists.query.all()
     result = "<table border=1>"
-    for mylist in Lists.query.all():
+    for mylist in all_lists:
         result += "<tr> <td>" + str(mylist.id) + "</td> " \
                        "<td>" + mylist.name + "</td>" \
                        "<td> " + mylist.description + "</td>" \
