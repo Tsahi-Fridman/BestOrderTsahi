@@ -29,10 +29,9 @@ def edit_list(id, name, description):
 
 @lists_bp.route("/delete_list/<id>")
 def delete_list(id):
-    itemtoremove = Lists.query.filter(Lists.id == id)
-
+    Lists.query.filter_by(id=id).delete()
     db.session.commit()
-    return "edit_list"
+    return "delete_list"
 
 
 @lists_bp.route("/view_tasks")
