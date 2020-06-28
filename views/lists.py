@@ -4,7 +4,7 @@ from classes import Lists
 
 lists_bp = Blueprint("lists_bp", __name__)
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root1234@localhost/school'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root1234@localhost/best_order_DB'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
