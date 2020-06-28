@@ -13,7 +13,6 @@ class Lists(db.Model):
     description = db.Column(db.String(225))
 
 
-
 class Tasks(db.Model):
     __tablename__ = "tasks"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -24,3 +23,8 @@ class Tasks(db.Model):
     assignee = db.Column(db.String(225))
 
 
+class Workers(db.Model):
+    __tablename__ = "workers"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.Integer)
+    title = db.Column(db.String(225))

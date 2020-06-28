@@ -9,18 +9,29 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-@lists_bp.route("/add_list")
-def add_list():
+@lists_bp.route("/add_list/<name>/<description>")
+def add_list(name, description):
     new_list_item = Lists()
-    new_list_item.name = 'first list name'
-    new_list_item.description = 'first list description'
+    new_list_item.name = name
+    new_list_item.description = description
     db.session.add(new_list_item)
     db.session.commit()
     return "Done new list item added to lists list"
 
 
-@lists_bp.route("/edit_list")
-def edit_list():
+@lists_bp.route("/edit_list/<id>/<name>/<description>")
+def edit_list(id, name, description):
+    Lists.query.filter(Lists.id == id).update({"name": name})
+    Lists.query.filter(Lists.id == id).update({"description": description})
+    db.session.commit()
+    return "edit_list"
+
+
+@lists_bp.route("/delete_list/<id>")
+def delete_list(id):
+    itemtoremove = Lists.query.filter(Lists.id == id)
+
+    db.session.commit()
     return "edit_list"
 
 
